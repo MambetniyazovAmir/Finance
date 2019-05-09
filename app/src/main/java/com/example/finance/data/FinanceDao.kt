@@ -5,18 +5,18 @@ import android.arch.persistence.room.*
 @Dao
 
 interface FinanceDao {
-    @Query("SELECT * FROM Contacts")
+    @Query("SELECT * FROM contacts")
     fun getAllContacts(): List<ContactModel>
 
-    @Query("SELECT * FROM Contacts WHERE id = :id")
+    @Query("SELECT * FROM contacts WHERE id = :id")
     fun getContactById(id: Int): ContactModel
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertToDB(models: List<ContactModel>)
+    fun insertToDB(model: ContactModel)
 
     @Update
-    fun updateContacts(): List<ContactModel>
+    fun updateContacts(model: ContactModel): List<ContactModel>
 
     @Delete
-    fun deleteContact(): List<ContactModel>
+    fun deleteContact(model: ContactModel)
 }
