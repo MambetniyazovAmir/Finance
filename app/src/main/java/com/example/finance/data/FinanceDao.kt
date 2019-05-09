@@ -3,7 +3,6 @@ package com.example.finance.data
 import android.arch.persistence.room.*
 
 @Dao
-
 interface FinanceDao {
     @Query("SELECT * FROM contacts")
     fun getAllContacts(): List<ContactModel>
@@ -15,7 +14,7 @@ interface FinanceDao {
     fun insertToDB(model: ContactModel)
 
     @Update
-    fun updateContacts(model: ContactModel): List<ContactModel>
+    fun updateContacts(model: ContactModel)
 
     @Delete
     fun deleteContact(model: ContactModel)
