@@ -17,7 +17,6 @@ abstract class FinanceDatabase: RoomDatabase() {
             if(INSTANCE == null){
                 INSTANCE = Room.databaseBuilder(context.applicationContext,FinanceDatabase::class.java, "finance.db")
                     .allowMainThreadQueries()
-                    .fallbackToDestructiveMigration()
                     .build()
             }
             return INSTANCE!!
