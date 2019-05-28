@@ -5,7 +5,7 @@ import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 
-@Database(entities = [ContactModel::class], version = 1, exportSchema = false)
+@Database(entities = [ContactModel::class], version = 2, exportSchema = false)
 abstract class FinanceDatabase: RoomDatabase() {
 
     abstract fun financeDao(): FinanceDao

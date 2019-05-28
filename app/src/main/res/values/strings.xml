@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Finance</string>
     <string name="text">Text</string>
+    <string name="adding">Добавление</string>
+    <string name="addBalance">Добавить баланс</string>
+    <string name="amount">Сумма</string>
+    <string name="contactName">Имя контакта</string>
+    <string name="comment">Комментарий</string>
+    <string name="Cancel">ОТМЕНА</string>
+    <string name="minus">МИНУС</string>
+    <string name="plus">ПЛЮС</string>
+    <string name="you_have_not_inputted_name">Не введено имя, нечего добавлять</string>
+    <string name="add">Добавить</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.finance
+package com.example.finance.ui.main
 import com.example.finance.data.ContactModel
 import com.example.finance.data.FinanceDao
 
