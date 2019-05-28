@@ -14,6 +14,9 @@ data class ContactModel (
     var name: String = "unknown name",
 
     @ColumnInfo(name = "amount")
-    var amount: Double = 0.0
+    var amount: Double = 0.0,
+
+    @ColumnInfo(name = "comment")
+    var comment: String? = null
 
 )

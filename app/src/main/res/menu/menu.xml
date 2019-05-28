@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+        >
+    <item
+            android:id="@+id/sortBtn"
+            android:icon="@drawable/ic_sort_by_alpha_black_24dp"
+            android:title="Sort"
+            app:showAsAction="ifRoom"/>
+    <item
+            android:id="@+id/sumIcon"
+            android:title="0"
+            app:showAsAction="always"/>
+    <item
+            android:id="@+id/menu1"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Новый контакт"/>
+    <item
+            android:id="@+id/menu2"
+            android:title="Насткройки"/>
+    <item
+            android:id="@+id/menu3"
+            android:title="О программе"/>
 </menu>

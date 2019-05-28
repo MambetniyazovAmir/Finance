@@ -2,13 +2,14 @@
 <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_standard"
-        android:layout_marginRight="@dimen/margin_standard">
+        android:minWidth="@dimen/dialog_min_width">
 
     <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/addTextView"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/adding"
             android:gravity="center_vertical"
@@ -17,25 +18,26 @@
             app:layout_constraintRight_toRightOf="parent"
             android:textSize="20sp"
             android:textColor="#000"
-            android:id="@+id/addTextView"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"/>
 
     <EditText
+            android:id="@+id/newContactName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/newContactName"
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@+id/addTextView"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="16dp"
-            android:hint="@string/contactName"
+            android:hint="@string/contact_name"
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
-            />
+            android:inputType="text"
+            android:autofillHints="@string/contact_name"
+            tools:ignore="UnusedAttribute"/>
 
     <CheckBox
             android:id="@+id/checkBoxId"
@@ -69,7 +71,7 @@
             app:layout_constraintTop_toBottomOf="@+id/addBalanceTextView"
             app:layout_constraintLeft_toLeftOf="parent"
             android:id="@+id/additionLayout"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintRight_toRightOf="parent"
             >
 
@@ -110,10 +112,9 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                app:layout_constraintRight_toRightOf="parent"
-                />
+                app:layout_constraintRight_toRightOf="parent"/>
 
-        <Button
+        <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
@@ -123,36 +124,42 @@
                 app:layout_constraintTop_toBottomOf="@+id/commentId"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginLeft="16dp"
+                android:layout_marginBottom="@dimen/margin_standard"
                 android:layout_marginTop="16dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="16dp"/>
 
-        <Button
+        <TextView
                 android:id="@+id/minusButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FF0000"
                 android:text="@string/minus"
+                android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@+id/commentId"
                 app:layout_constraintRight_toLeftOf="@id/plusButton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginTop="16dp"
                 android:layout_marginLeft="16dp"
                 android:textSize="14sp"
-                android:layout_marginRight="@dimen/margin_standard"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginRight="@dimen/margin_small"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="@dimen/margin_standard"/>
 
-        <Button
+        <TextView
                 android:id="@+id/plusButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#00FF00"
                 android:text="@string/plus"
+                android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@+id/commentId"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="@dimen/margin_standard"
                 android:textSize="14sp"
                 android:layout_marginRight="@dimen/margin_standard"
                 android:layout_marginEnd="@dimen/margin_standard"/>
@@ -166,7 +173,7 @@
             app:layout_constraintTop_toBottomOf="@+id/addBalanceTextView"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:visibility="gone"
+            android:visibility="visible"
             >
 
         <TextView
@@ -176,6 +183,7 @@
                 app:layout_constraintRight_toLeftOf="@+id/addButton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/cancelButton1"
+                android:textStyle="bold"
                 android:text="@string/Cancel"
                 android:background="#fff"
                 android:layout_marginLeft="16dp"
@@ -200,6 +208,7 @@
                 android:textColor="@color/colorPrimary"
                 android:layout_marginRight="16dp"
                 android:layout_marginEnd="16dp"
+                android:textStyle="bold"
                 android:layout_marginBottom="@dimen/margin_standard"
                 />
     </android.support.constraint.ConstraintLayout>

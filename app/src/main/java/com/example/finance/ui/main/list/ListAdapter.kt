@@ -12,6 +12,7 @@ class ListAdapter : RecyclerView.Adapter<ViewHolder>() {
 
     fun setData(models: List<ContactModel>){
         this.models = models
+        notifyDataSetChanged()
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int){
         holder.populateModel(models[position])

@@ -4,18 +4,23 @@ import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.widget.ListAdapter
 import android.widget.Toast
 import com.example.finance.R
 import com.example.finance.data.FinanceDatabase
+import com.example.finance.ui.main.MainActivity
+import com.example.finance.ui.main.MainView
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_add_contact.*
+import kotlinx.android.synthetic.main.item.*
 
 class AddContactDialog(context: Context) : Dialog(context), AddContactView {
-
     lateinit var presenter: AddContactPresenter
-
+    private var onContactAddedListener: OnContactAddedListener? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dialog_add_contact)
+        checkBoxId.isChecked = false
         checkBoxId.setOnCheckedChangeListener { _, isChecked ->
             when(isChecked) {
                 true -> {
@@ -28,8 +33,33 @@ class AddContactDialog(context: Context) : Dialog(context), AddContactView {
                 }
             }
         }
-
+        addBalanceTextView.setOnClickListener {
+            checkBoxId.isChecked = !checkBoxId.isChecked
+        }
         presenter = AddContactPresenter(FinanceDatabase.getInstance(context).financeDao(), this)
+        addButton.setOnClickListener {
+            presenter.addContact(newContactName.text.toString())
+        }
+        plusButton.setOnClickListener {
+            presenter.plusAmount(newContactName.text.toString(), amountId.text.toString().toDouble(), commentId.text.toString())
+        }
+        minusButton.setOnClickListener {
+            presenter.minusAmount(newContactName.text.toString(), amountId.text.toString().toDouble(), commentId.text.toString())
+        }
+        cancelButton.setOnClickListener {
+            cancel()
+        }
+        cancelButton1.setOnClickListener {
+            presenter.cancel()
+        }
+    }
+
+    fun setOnContactAddedListener(onContactAddedListener: OnContactAddedListener) {
+        this.onContactAddedListener = onContactAddedListener
+    }
+
+    override fun updateView() {
+        onContactAddedListener?.contactAdded()
     }
 
     override fun close() {
@@ -43,4 +73,5 @@ class AddContactDialog(context: Context) : Dialog(context), AddContactView {
     override fun showMessage(message: Int) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
+
 }
