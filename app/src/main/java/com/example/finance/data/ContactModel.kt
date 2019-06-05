@@ -6,14 +6,17 @@ import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "contacts")
 data class ContactModel (
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id: Int?,
+    var id: Int = 0,
 
     @ColumnInfo(name = "name")
-    var name: String?,
+    var name: String = "unknown name",
 
     @ColumnInfo(name = "amount")
-    var amount: Double?
+    var amount: Double = 0.0,
+
+    @ColumnInfo(name = "comment")
+    var comment: String? = null
 
 )
