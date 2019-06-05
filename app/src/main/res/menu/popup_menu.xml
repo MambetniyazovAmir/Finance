@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/repayFullAmount"
+        android:title="@string/repay_full_amount"/>
+    <item
+        android:id="@+id/editBalance"
+        android:title="@string/edit_balance"/>
+    <item
+        android:id="@+id/rename"
+        android:title="@string/rename"/>
+    <item
+        android:id="@+id/deleteContact"
+        android:title="@string/delete_contact"/>
+</menu>

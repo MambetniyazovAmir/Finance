@@ -95,6 +95,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/moneyId"
                 android:textSize="16sp"
+                android:inputType="numberDecimal"
                 android:layout_marginRight="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
