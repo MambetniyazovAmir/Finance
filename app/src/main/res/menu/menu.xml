@@ -8,10 +8,6 @@
             android:title="Sort"
             app:showAsAction="ifRoom"/>
     <item
-            android:id="@+id/sumIcon"
-            android:title="0"
-            app:showAsAction="always"/>
-    <item
             android:id="@+id/menu1"
             android:icon="@mipmap/ic_launcher"
             android:title="Новый контакт"/>

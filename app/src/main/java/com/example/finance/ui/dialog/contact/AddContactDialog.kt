@@ -41,9 +41,26 @@ class AddContactDialog(context: Context) : Dialog(context), AddContactView {
             presenter.addContact(newContactName.text.toString())
         }
         plusButton.setOnClickListener {
+            if (amountId.text.isEmpty() && commentId.text.isEmpty()){
+                presenter.addContact(newContactName.text.toString())
+                return@setOnClickListener
+            }
+
+            if (amountId.text.isEmpty()){
+                showMessage(R.string.you_have_not_inputted_name)
+                return@setOnClickListener
+            }
             presenter.plusAmount(newContactName.text.toString(), amountId.text.toString().toDouble(), commentId.text.toString())
         }
         minusButton.setOnClickListener {
+            if (amountId.text.isEmpty() && commentId.text.isEmpty()){
+                presenter.addContact(newContactName.text.toString())
+                return@setOnClickListener
+            }
+            if (amountId.text.isEmpty()){
+                showMessage(R.string.you_have_not_inputted_name)
+                return@setOnClickListener
+            }
             presenter.minusAmount(newContactName.text.toString(), amountId.text.toString().toDouble(), commentId.text.toString())
         }
         cancelButton.setOnClickListener {

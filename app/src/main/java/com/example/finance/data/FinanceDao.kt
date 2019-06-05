@@ -13,6 +13,12 @@ interface FinanceDao {
     @Query("SELECT * FROM contacts WHERE name= :name")
     fun check(name: String): ContactModel?
 
+    @Query("SELECT * FROM contacts ORDER BY name")
+    fun sortByName(): List<ContactModel>
+
+    @Query("SELECT * FROM contacts ORDER BY amount DESC")
+    fun sortByAmount(): List<ContactModel>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertToDB(model: ContactModel)
 
