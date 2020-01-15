@@ -18,4 +18,8 @@
     <string name="change_name">Изменить</string>
     <string name="rename_noun">Переименование</string>
     <string name="overall">Общий</string>
+    <string name="about">О программе</string>
+    <string name="about_detail">Записная книжка, призванная стать помощником в учёте долгов и займов.</string>
+    <string name="version">Версия: 1.0</string>
+    <string name="contacts_to_connect">Пожелания и баги? Свяжитесь с разработчиком mr.amirniyaz3010@gmail.com</string>
 </resources>

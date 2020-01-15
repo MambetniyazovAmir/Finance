@@ -1,8 +1,9 @@
 package com.example.finance.ui.main
 import com.example.finance.data.ContactModel
 import com.example.finance.data.FinanceDao
+import com.example.finance.helper.SharedPreferencesHelper
 
-class MainPresenter (private val dao: FinanceDao, private val view: MainView){
+class MainPresenter (private val dao: FinanceDao, private val view: MainView, private val helper: SharedPreferencesHelper){
 
     fun getAllContacts() {
         view.setData(dao.getAllContacts())
@@ -28,5 +29,11 @@ class MainPresenter (private val dao: FinanceDao, private val view: MainView){
             view.setData(dao.sortByName())
         else
             view.setData(dao.sortByAmount())
+    }
+    fun isLocked() {
+        if (helper.isLocked()) {
+            view.openPasswordActivity()
+            helper.setLocked(true)
+        }
     }
 }
