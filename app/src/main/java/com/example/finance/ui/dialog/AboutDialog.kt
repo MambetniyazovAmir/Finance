@@ -1,10 +1,11 @@
 package com.example.finance.ui.dialog
 
-import android.support.v7.app.AppCompatActivity
+import android.app.Dialog
+import android.content.Context
 import android.os.Bundle
 import com.example.finance.R
 
-class AboutActivity : AppCompatActivity() {
+class AboutDialog(context: Context) : Dialog(context) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
